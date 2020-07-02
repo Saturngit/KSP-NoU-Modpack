@@ -1,8 +1,8 @@
 Executing: KerbalEngineer - 1.1.7.1
 Assembly: C:\Program Files\KerbalSpaceProgram\KSP 1.8.1-NoU\GameData\KerbalEngineer\KerbalEngineer.dll
 
-[Log 08:37:46.6712913]: images (UnityEngine.AssetBundle)
-[Log 08:41:18.7721962]: Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+[Log 09:57:31.1223208]: images (UnityEngine.AssetBundle)
+[Log 10:00:00.8311788]: Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: Scale_Redist, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: ModuleManager, Version=4.1.3.0, Culture=neutral, PublicKeyToken=null
 Assembly: ClickThroughBlocker, Version=0.1.9.5, Culture=neutral, PublicKeyToken=null
@@ -11,7 +11,6 @@ Assembly: BlendshapeModelLoader, Version=1.0.0.0, Culture=neutral, PublicKeyToke
 Assembly: TexturesUnlimited, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: ToolbarControl, Version=0.1.9.4, Culture=neutral, PublicKeyToken=null
 Assembly: AmazingCurveEditor, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
-Assembly: Sigma88LoadingScreens, Version=0.5.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: AtmosphereAutopilot, Version=1.5.16.0, Culture=neutral, PublicKeyToken=null
 Assembly: AtmosphereAutopilot.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: AAPartCategory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -21,17 +20,6 @@ Assembly: BDArmory.Core, Version=1.3.2.0, Culture=neutral, PublicKeyToken=null
 Assembly: BDArmory, Version=1.3.2.0, Culture=neutral, PublicKeyToken=null
 Assembly: CameraTools, Version=1.13.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: DestructionEffects, Version=1.11.0.0, Culture=neutral, PublicKeyToken=null
-Assembly: Atmosphere, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
-Assembly: CelestialShadows, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
-Assembly: CityLights, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
-Assembly: EVEManager, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
-Assembly: PartFX, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
-Assembly: PQSManager, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
-Assembly: ShaderLoader, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
-Assembly: Terrain, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
-Assembly: TextureConfig, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
-Assembly: Utils, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
-Assembly: _BuildManager, Version=1.8.0.2, Culture=neutral, PublicKeyToken=null
 Assembly: ModularFlightIntegrator, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: FerramAerospaceResearch, Version=0.15.11.4, Culture=neutral, PublicKeyToken=null
 Assembly: ferramGraph, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
@@ -52,7 +40,6 @@ Assembly: QuickStart, Version=2.2.0.10, Culture=neutral, PublicKeyToken=null
 Assembly: RealChute, Version=1.4.7228.28356, Culture=neutral, PublicKeyToken=null
 Assembly: RealHeat, Version=5.1.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: RetractableLiftingSurface, Version=0.2.1.1, Culture=neutral, PublicKeyToken=null
-Assembly: scatterer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: SimpleFuelSwitch, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: HoverCraft, Version=1.0.4.4, Culture=neutral, PublicKeyToken=null
 Assembly: VLSLauncher, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null
@@ -63,7 +50,14 @@ Assembly: Scale, Version=2.4.3.14, Culture=neutral, PublicKeyToken=null
 Assembly: VesselMover, Version=1.8.0.0, Culture=neutral, PublicKeyToken=null
 Assembly: ZeroMiniAVC, Version=1.1.0.1, Culture=neutral, PublicKeyToken=null
 
-[Log 08:41:18.7731963]: FlightEngineerCore->Awake
-[Log 08:41:23.0117844]: FlightEngineerCore->Start
-[Log 08:41:25.8843179]: FlightEngineerCore->OnDestroy
-[Log 08:47:47.2077423]: BuildAdvanced->OnDestroy
+[Log 10:00:00.8311788]: FlightEngineerCore->Awake
+[Log 10:00:05.0445866]: FlightEngineerCore->Start
+[Log 10:00:06.4767297]: FlightEngineerCore->OnDestroy
+[Log 10:09:13.5165292]: BuildAdvanced->OnDestroy
+[Log 10:09:17.4429662]: ActionMenu->Awake
+[Log 10:09:17.4429662]: FlightEngineerCore->Awake
+[Log 10:09:24.3080229]: ActionMenu->Start
+[Log 10:09:24.3290277]: FlightEngineerCore->Start
+[Log 10:10:33.2259463]: ActionMenu->OnDestroy
+[Log 10:10:33.2449507]: FlightEngineerCore->OnDestroy
+[Log 10:19:36.2197296]: BuildAdvanced->OnDestroy
