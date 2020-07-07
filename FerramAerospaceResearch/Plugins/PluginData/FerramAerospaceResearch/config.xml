@@ -10,15 +10,15 @@
         <ymax>238</ymax>
     </rect>
     <rect name="flight_dataGuiRect">
-        <xmin>0</xmin>
-        <xmax>0</xmax>
-        <ymin>0</ymin>
-        <ymax>0</ymax>
+        <xmin>71</xmin>
+        <xmax>369</xmax>
+        <ymin>4</ymin>
+        <ymax>720</ymax>
     </rect>
     <rect name="flight_settingsGuiRect">
-        <xmin>3</xmin>
-        <xmax>203</xmax>
-        <ymin>1</ymin>
-        <ymax>391</ymax>
+        <xmin>2</xmin>
+        <xmax>202</xmax>
+        <ymin>77</ymin>
+        <ymax>467</ymax>
     </rect>
 </config>
