@@ -1,4 +1,4 @@
-patchedNodeCount = 1762
+patchedNodeCount = 1770
 UrlConfig
 {
 	parentUrl = /Physics.cfg
@@ -21770,7 +21770,7 @@ UrlConfig
 			CHECK
 			{
 				type = name
-				value = f100pw229, f110ge129, ej200
+				value = f100pw229, f110ge129, ej200, f119pw100, f414ge400
 			}
 		}
 		FILTER
@@ -21885,7 +21885,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -21901,7 +21901,7 @@ UrlConfig
 			}
 			atmosphereCurve
 			{
-				key = 0 11000 0 0
+				key = 0 2000 0 0
 			}
 			velCurve
 			{
@@ -21938,13 +21938,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 5
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -21960,7 +21960,7 @@ UrlConfig
 			}
 			atmosphereCurve
 			{
-				key = 0 6000 0 0
+				key = 0 800 0 0
 			}
 			velCurve
 			{
@@ -22295,7 +22295,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -22348,13 +22348,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1.35
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -22370,7 +22370,7 @@ UrlConfig
 			}
 			atmosphereCurve
 			{
-				key = 0 6000 0 0
+				key = 0 300 0 0
 			}
 			velCurve
 			{
@@ -22709,7 +22709,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -22762,13 +22762,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2.5
-			machHeatMult = 20.0
+			machLimit = 1.35
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -23121,7 +23121,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -23174,13 +23174,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1.8
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -23532,7 +23532,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -23585,13 +23585,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 2
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -23943,7 +23943,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -23996,13 +23996,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.3
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -24354,7 +24354,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -24407,13 +24407,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 2
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -24765,7 +24765,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -24818,13 +24818,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 1.9
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -25176,7 +25176,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -25229,13 +25229,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.1
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -25587,7 +25587,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -25642,13 +25642,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.4
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -26001,7 +26001,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -26054,13 +26054,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.25
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -26412,7 +26412,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -26465,13 +26465,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.25
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -26824,7 +26824,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -26877,13 +26877,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.25
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -27234,8 +27234,8 @@ UrlConfig
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 1
-			machHeatMult = 20.0
+			machLimit = 0.9
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -27288,13 +27288,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 2.83
-			machHeatMult = 400.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -27646,7 +27646,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -27699,13 +27699,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 1.7
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -28056,7 +28056,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -28109,13 +28109,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.25
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -28466,7 +28466,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -28519,13 +28519,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.35
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -28825,7 +28825,7 @@ UrlConfig
 		bulkheadProfiles = size1
 		title = Pratt & Whitney F100-PW-100
 		manufacturer = EnginesEngineering
-		description = Engine used on the McDonnell Douglas F-15 Eagle.
+		description = Engine used on the McDonnell Douglas F-15A/B/C/Dx Eagle.
 		attachRules = 1,0,1,0,0
 		mass = 1.467
 		skinInternalConductionMult = 4.0
@@ -28877,7 +28877,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -28930,13 +28930,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.5
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -29289,7 +29289,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -29342,13 +29342,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 1.8
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -29700,7 +29700,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -29753,13 +29753,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.2
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -30102,8 +30102,8 @@ UrlConfig
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 1
-			machHeatMult = 20.0
+			machLimit = 0.95
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -30363,7 +30363,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -30416,13 +30416,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 1.6
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -30765,8 +30765,8 @@ UrlConfig
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 1
-			machHeatMult = 20.0
+			machLimit = 0.97
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -31026,7 +31026,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -31079,13 +31079,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 2
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -31437,8 +31437,8 @@ UrlConfig
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 1
-			machHeatMult = 20.0
+			machLimit = 0.9
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -31491,13 +31491,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.2
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -31849,8 +31849,8 @@ UrlConfig
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 1
-			machHeatMult = 20.0
+			machLimit = 1.45
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -31906,13 +31906,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.2
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -32264,7 +32264,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -32318,13 +32318,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2.83
-			machHeatMult = 400.0
+			machLimit = 2.85
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -32676,7 +32676,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -32729,13 +32729,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.35
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -33087,7 +33087,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -33140,13 +33140,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.35
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -33498,7 +33498,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -33551,13 +33551,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.5
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -33908,8 +33908,8 @@ UrlConfig
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 1
-			machHeatMult = 20.0
+			machLimit = 0.75
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -33963,13 +33963,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 0.75
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -34268,7 +34268,7 @@ UrlConfig
 		bulkheadProfiles = size1
 		title = Pratt & Whitney F100-PW-229
 		manufacturer = EnginesEngineering
-		description = Engine used on the F-15E Strike Eagle and General Dynamics F-16 Block 52/72 Fighting Falcon.
+		description = Engine used on the F-15E Strike Eagle and General Dynamics F-16 Block 52/72 Viper.
 		attachRules = 1,0,1,0,0
 		mass = 1.205
 		skinInternalConductionMult = 4.0
@@ -34320,7 +34320,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -34373,13 +34373,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.5
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -34679,7 +34679,7 @@ UrlConfig
 		bulkheadProfiles = size1
 		title = General Electric F110-GE-129
 		manufacturer = EnginesEngineering
-		description = Engine used on the General Dynamics F-16 Block 50/70 Fighting Falcon.
+		description = Engine used on the General Dynamics F-16 Block 50/70 Fighting Falcon / Viper.
 		attachRules = 1,0,1,0,0
 		mass = 1.205
 		skinInternalConductionMult = 4.0
@@ -34731,7 +34731,7 @@ UrlConfig
 			useAtmCurve = True
 			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -34784,13 +34784,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 2.35
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -35141,8 +35141,829 @@ UrlConfig
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
+			machLimit = 1.55
+			machHeatMult = 400
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 40
+			}
+			atmosphereCurve
+			{
+				key = 0 4900 0 0
+			}
+			velCurve
+			{
+				key = 0 0.9 0 0
+				key = 0.2 1 0 0
+				key = 1.003377 0.6166046 -1.447272 -0.6711493
+				key = 1.7 0 -3.616597 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 0
+				key = 0.2 1 0 0
+				key = 1.3 1 0 0
+			}
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			engineID = Wet
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			minThrust = 0
+			maxThrust = 90
+			heatProduction = 75
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.8
+			engineDecelerationSpeed = 0.8
+			useVelocityCurve = False
+			flameoutEffectName = flameout
+			runningEffectName = power_wet
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_wet
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 120
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			flowMultCap = 1.1
+			machLimit = 2.2
+			machHeatMult = 400
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 12
+			}
+			atmosphereCurve
+			{
+				key = 0 2170 0 0
+			}
+			velCurve
+			{
+				key = 0 0.9 0 0
+				key = 0.2 1 0 0
+				key = 2 1 0 0
+				key = 2.597534 0 -1.448665 -1.864674
+			}
+			atmCurve
+			{
+				key = 0 0 0 0
+				key = 0.2 1 0 0
+				key = 1.3 1 0 0
+			}
+		}
+		MODULE
+		{
+			name = FXModuleAnimateThrottle
+			animationName = TurboJetNozzleDry
+			responseSpeed = 0.05
+			layer = 1
+			dependOnEngineState = True
+			dependOnThrottle = True
+			engineName = Dry
+			weightOnOperational = True
+		}
+		MODULE
+		{
+			name = FXModuleAnimateThrottle
+			animationName = TurboJetNozzleWet
+			responseSpeed = 0.08
+			layer = 2
+			dependOnEngineState = True
+			dependOnThrottle = True
+			engineName = Wet
+			weightOnOperational = True
+		}
+		MODULE
+		{
+			name = FXModuleAnimateThrottle
+			animationName = TurboJetHeat
+			responseSpeed = 0.0005
+			layer = 3
+			dependOnEngineState = True
+			engineName = Wet
+		}
+		MODULE
+		{
+			name = ModuleGimbal
+			gimbalTransformName = Gimbal
+			gimbalRange = 0
+			useGimbalResponseSpeed = true
+			gimbalResponseSpeed = 15
+		}
+		MODULE
+		{
+			name = FXModuleConstrainPosition
+			matchRotation = false
+			matchPosition = true
+			CONSTRAINFX
+			{
+				targetName = NozzlePoint
+				moversName = Nozzle
+			}
+		}
+		MODULE
+		{
+			name = ModuleAlternator
+			engineName = Wet
+			outputName = Alternator (Wet)
+			RESOURCE
+			{
+				name = ElectricCharge
+				rate = 5.0
+			}
+		}
+		MODULE
+		{
+			name = ModuleAlternator
+			engineName = Dry
+			outputName = Alternator (Dry)
+			RESOURCE
+			{
+				name = ElectricCharge
+				rate = 3.0
+			}
+		}
+		MODULE
+		{
+			name = ModuleSurfaceFX
+			thrustProviderModuleIndex = 1
+			fxMax = 0.6
+			maxDistance = 25
+			falloff = 2
+			thrustTransformName = thrustTransform
+		}
+		MODULE
+		{
+			name = ModuleSurfaceFX
+			thrustProviderModuleIndex = 2
+			fxMax = 0.6
+			maxDistance = 25
+			falloff = 2
+			thrustTransformName = thrustTransform
+		}
+		EFFECTS
+		{
+			running_dry
+			{
+				PREFAB_PARTICLE
+				{
+					prefabName = fx_smokeTrail_light
+					transformName = smokePoint
+					emission = 0.0 0.0
+					emission = 0.05 0.0
+					emission = 0.075 0.25
+					emission = 1.0 1.25
+					speed = 0.0 0.25
+					speed = 1.0 1.0
+					localOffset = 0, 0, 1
+					localRotation = 1, 0, 0, -90
+				}
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_jet_low
+					volume = 0.0 0.0
+					volume = 0.05 0.2
+					volume = 1.0 0.4
+					pitch = 0.0 0.2
+					pitch = 0.05 0.4
+					pitch = 1.0 0.5
+					loop = true
+				}
+			}
+			power_dry
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_jet_deep
+					volume = 0.0 0.0
+					volume = 0.05 0.6
+					volume = 1.0 1.3
+					pitch = 0.0 0.3
+					pitch = 1.0 0.6
+					loop = true
+				}
+			}
+			running_wet
+			{
+				PREFAB_PARTICLE
+				{
+					prefabName = fx_smokeTrail_light
+					transformName = smokePoint
+					emission = 0.0 0.0
+					emission = 0.05 0.0
+					emission = 0.075 0.5
+					emission = 1.0 1.25
+					speed = 0.0 0.25
+					speed = 1.0 1.0
+					localOffset = 0, 0, 1
+					localRotation = 1, 0, 0, -90
+				}
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_jet_low
+					volume = 0.0 0.0
+					volume = 0.05 0.2
+					volume = 1.0 0.35
+					pitch = 0.0 0.2
+					pitch = 0.05 0.4
+					pitch = 1.0 0.6
+					loop = true
+				}
+			}
+			power_wet
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_rocket_spurts
+					volume = 0.0 0.0
+					volume = 0.1 0.4
+					volume = 1.0 1.0
+					pitch = 0.0 0.5
+					pitch = 0.33 0.8
+					pitch = 1.0 1.5
+					loop = true
+				}
+				MODEL_MULTI_PARTICLE
+				{
+					modelName = Squad/FX/afterburner_shock
+					transformName = smokePoint
+					emission = 0.0 0.0
+					emission = 0.05 0.05
+					emission = 0.33 0.1
+					emission = 1.0 1.0
+					speed = 0.0 0.0
+					speed = 0.05 0.05
+					speed = 0.33 0.16
+					speed = 1.0 1.0
+					energy = 0.0 1.5
+					energy = 0.33 1.0
+					energy = 1.0 1.0
+				}
+			}
+			engage
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_vent_medium
+					volume = 1.0
+					pitch = 2.0
+					loop = false
+				}
+			}
+			disengage
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_vent_soft
+					volume = 1.0
+					pitch = 2.0
+					loop = false
+				}
+			}
+			flameout
+			{
+				PREFAB_PARTICLE
+				{
+					prefabName = fx_exhaustSparks_flameout_2
+					transformName = smokePoint
+					oneShot = true
+				}
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_explosion_low
+					volume = 1.0
+					pitch = 2.0
+					loop = false
+				}
+			}
+		}
+		MODULE
+		{
+			name = GeometryPartModule
+		}
+		MODULE
+		{
+			name = FARAeroPartModule
+		}
+		MODULE
+		{
+			name = FARPartModule
+		}
+	}
+}
+UrlConfig
+{
+	parentUrl = NoU/EW/EnginesAB.cfg
+	PART
+	{
+		name = f119pw100
+		module = Part
+		author = Toonu
+		rescaleFactor = 0.96
+		scale = 0.96
+		node_stack_top = 0.0, 0.0, 0.0, 0.0, 1.0, 0.0
+		CoMOffset = 0.0, 1.5, 0.0
+		TechRequired = supersonicFlight
+		entryCost = 9000
+		cost = 2000
+		category = Engine
+		subcategory = 0
+		bulkheadProfiles = size1
+		title = Pratt & Whitney F119-PW-100
+		manufacturer = EnginesEngineering
+		description = Engine used on the Lockheed Martin F-22 Raptor.
+		attachRules = 1,0,1,0,0
+		mass = 1.8
+		skinInternalConductionMult = 4.0
+		emissiveConstant = 0.8
+		dragModelType = default
+		maximum_drag = 0.2
+		minimum_drag = 0.2
+		angularDrag = 2
+		crashTolerance = 7
+		maxTemp = 2600
+		tags = fighter jet
+		MODEL
+		{
+			model = Squad/Parts/Engine/jetEngines/turboJet
+		}
+		MODULE
+		{
+			name = MultiModeEngine
+			primaryEngineID = Dry
+			secondaryEngineID = Wet
+			carryOverThrottle = True
+			autoSwitchAvailable = False
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			engineID = Dry
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			minThrust = 0
+			maxThrust = 116
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.5
+			engineDecelerationSpeed = 0.5
+			useVelocityCurve = False
+			flameoutEffectName = flameout
+			powerEffectName = power_dry
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_dry
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 5
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			flowMultCap = 1.1
+			machLimit = 1.85
+			machHeatMult = 400
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 40
+			}
+			atmosphereCurve
+			{
+				key = 0 11000 0 0
+			}
+			velCurve
+			{
+				key = 0 0.9 0 0
+				key = 0.2 1 0 0
+				key = 2.2 0 -1.740786 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 0
+				key = 0.2 1 0 0
+				key = 1.3 1 0 0
+			}
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			engineID = Wet
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			minThrust = 0
+			maxThrust = 156
+			heatProduction = 75
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.8
+			engineDecelerationSpeed = 0.8
+			useVelocityCurve = False
+			flameoutEffectName = flameout
+			runningEffectName = power_wet
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_wet
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 120
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			flowMultCap = 1.1
+			machLimit = 2.25
+			machHeatMult = 400
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 12
+			}
+			atmosphereCurve
+			{
+				key = 0 6000 0 0
+			}
+			velCurve
+			{
+				key = 0 0.9 0 0
+				key = 0.2 1 0 0
+				key = 2 1 0 0
+				key = 2.35 0 -1.448665 -1.864674
+			}
+			atmCurve
+			{
+				key = 0 0 0 0
+				key = 0.2 1 0 0
+				key = 1.3 1 0 0
+			}
+		}
+		MODULE
+		{
+			name = FXModuleAnimateThrottle
+			animationName = TurboJetNozzleDry
+			responseSpeed = 0.05
+			layer = 1
+			dependOnEngineState = True
+			dependOnThrottle = True
+			engineName = Dry
+			weightOnOperational = True
+		}
+		MODULE
+		{
+			name = FXModuleAnimateThrottle
+			animationName = TurboJetNozzleWet
+			responseSpeed = 0.08
+			layer = 2
+			dependOnEngineState = True
+			dependOnThrottle = True
+			engineName = Wet
+			weightOnOperational = True
+		}
+		MODULE
+		{
+			name = FXModuleAnimateThrottle
+			animationName = TurboJetHeat
+			responseSpeed = 0.0005
+			layer = 3
+			dependOnEngineState = True
+			engineName = Wet
+		}
+		MODULE
+		{
+			name = ModuleGimbal
+			gimbalTransformName = Gimbal
+			gimbalRange = 0
+			useGimbalResponseSpeed = true
+			gimbalResponseSpeed = 15
+		}
+		MODULE
+		{
+			name = FXModuleConstrainPosition
+			matchRotation = false
+			matchPosition = true
+			CONSTRAINFX
+			{
+				targetName = NozzlePoint
+				moversName = Nozzle
+			}
+		}
+		MODULE
+		{
+			name = ModuleAlternator
+			engineName = Wet
+			outputName = Alternator (Wet)
+			RESOURCE
+			{
+				name = ElectricCharge
+				rate = 5.0
+			}
+		}
+		MODULE
+		{
+			name = ModuleAlternator
+			engineName = Dry
+			outputName = Alternator (Dry)
+			RESOURCE
+			{
+				name = ElectricCharge
+				rate = 3.0
+			}
+		}
+		MODULE
+		{
+			name = ModuleSurfaceFX
+			thrustProviderModuleIndex = 1
+			fxMax = 0.6
+			maxDistance = 25
+			falloff = 2
+			thrustTransformName = thrustTransform
+		}
+		MODULE
+		{
+			name = ModuleSurfaceFX
+			thrustProviderModuleIndex = 2
+			fxMax = 0.6
+			maxDistance = 25
+			falloff = 2
+			thrustTransformName = thrustTransform
+		}
+		EFFECTS
+		{
+			running_dry
+			{
+				PREFAB_PARTICLE
+				{
+					prefabName = fx_smokeTrail_light
+					transformName = smokePoint
+					emission = 0.0 0.0
+					emission = 0.05 0.0
+					emission = 0.075 0.25
+					emission = 1.0 1.25
+					speed = 0.0 0.25
+					speed = 1.0 1.0
+					localOffset = 0, 0, 1
+					localRotation = 1, 0, 0, -90
+				}
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_jet_low
+					volume = 0.0 0.0
+					volume = 0.05 0.2
+					volume = 1.0 0.4
+					pitch = 0.0 0.2
+					pitch = 0.05 0.4
+					pitch = 1.0 0.5
+					loop = true
+				}
+			}
+			power_dry
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_jet_deep
+					volume = 0.0 0.0
+					volume = 0.05 0.6
+					volume = 1.0 1.3
+					pitch = 0.0 0.3
+					pitch = 1.0 0.6
+					loop = true
+				}
+			}
+			running_wet
+			{
+				PREFAB_PARTICLE
+				{
+					prefabName = fx_smokeTrail_light
+					transformName = smokePoint
+					emission = 0.0 0.0
+					emission = 0.05 0.0
+					emission = 0.075 0.5
+					emission = 1.0 1.25
+					speed = 0.0 0.25
+					speed = 1.0 1.0
+					localOffset = 0, 0, 1
+					localRotation = 1, 0, 0, -90
+				}
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_jet_low
+					volume = 0.0 0.0
+					volume = 0.05 0.2
+					volume = 1.0 0.35
+					pitch = 0.0 0.2
+					pitch = 0.05 0.4
+					pitch = 1.0 0.6
+					loop = true
+				}
+			}
+			power_wet
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_rocket_spurts
+					volume = 0.0 0.0
+					volume = 0.1 0.4
+					volume = 1.0 1.0
+					pitch = 0.0 0.5
+					pitch = 0.33 0.8
+					pitch = 1.0 1.5
+					loop = true
+				}
+				MODEL_MULTI_PARTICLE
+				{
+					modelName = Squad/FX/afterburner_shock
+					transformName = smokePoint
+					emission = 0.0 0.0
+					emission = 0.05 0.05
+					emission = 0.33 0.1
+					emission = 1.0 1.0
+					speed = 0.0 0.0
+					speed = 0.05 0.05
+					speed = 0.33 0.16
+					speed = 1.0 1.0
+					energy = 0.0 1.5
+					energy = 0.33 1.0
+					energy = 1.0 1.0
+				}
+			}
+			engage
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_vent_medium
+					volume = 1.0
+					pitch = 2.0
+					loop = false
+				}
+			}
+			disengage
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_vent_soft
+					volume = 1.0
+					pitch = 2.0
+					loop = false
+				}
+			}
+			flameout
+			{
+				PREFAB_PARTICLE
+				{
+					prefabName = fx_exhaustSparks_flameout_2
+					transformName = smokePoint
+					oneShot = true
+				}
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_explosion_low
+					volume = 1.0
+					pitch = 2.0
+					loop = false
+				}
+			}
+		}
+		MODULE
+		{
+			name = GeometryPartModule
+		}
+		MODULE
+		{
+			name = FARAeroPartModule
+		}
+		MODULE
+		{
+			name = FARPartModule
+		}
+	}
+}
+UrlConfig
+{
+	parentUrl = NoU/EW/EnginesAB.cfg
+	PART
+	{
+		name = f414ge400
+		module = Part
+		author = Toonu
+		rescaleFactor = 0.712
+		scale = 0.712
+		node_stack_top = 0.0, 0.0, 0.0, 0.0, 1.0, 0.0
+		CoMOffset = 0.0, 1.5, 0.0
+		TechRequired = supersonicFlight
+		entryCost = 9000
+		cost = 2000
+		category = Engine
+		subcategory = 0
+		bulkheadProfiles = size1
+		title = General Electrics F414-GE-400
+		manufacturer = EnginesEngineering
+		description = Engine used on the Boeing F/A-18E/F Super Hornet.
+		attachRules = 1,0,1,0,0
+		mass = 1.11
+		skinInternalConductionMult = 4.0
+		emissiveConstant = 0.8
+		dragModelType = default
+		maximum_drag = 0.2
+		minimum_drag = 0.2
+		angularDrag = 2
+		crashTolerance = 7
+		maxTemp = 2600
+		tags = fighter jet
+		MODEL
+		{
+			model = Squad/Parts/Engine/jetEngines/turboJet
+		}
+		MODULE
+		{
+			name = MultiModeEngine
+			primaryEngineID = Dry
+			secondaryEngineID = Wet
+			carryOverThrottle = True
+			autoSwitchAvailable = False
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			engineID = Dry
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			minThrust = 0
+			maxThrust = 57.8
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.5
+			engineDecelerationSpeed = 0.5
+			useVelocityCurve = False
+			flameoutEffectName = flameout
+			powerEffectName = power_dry
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_dry
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 5
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			flowMultCap = 1.1
 			machLimit = 1
-			machHeatMult = 20.0
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -35182,7 +36003,7 @@ UrlConfig
 			exhaustDamage = True
 			ignitionThreshold = 0.1
 			minThrust = 0
-			maxThrust = 90
+			maxThrust = 97.9
 			heatProduction = 75
 			useEngineResponseTime = True
 			engineAccelerationSpeed = 0.8
@@ -35196,13 +36017,13 @@ UrlConfig
 			engineSpoolIdle = 0.05
 			engineSpoolTime = 2.0
 			EngineType = Turbine
-			exhaustDamageMultiplier = 20
+			exhaustDamageMultiplier = 120
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
 			flowMultCap = 1.1
-			machLimit = 2
-			machHeatMult = 20.0
+			machLimit = 1.9
+			machHeatMult = 400
 			PROPELLANT
 			{
 				name = LiquidFuel
@@ -35223,7 +36044,7 @@ UrlConfig
 			velCurve
 			{
 				key = 0 0.9 0 0
-				key = 0.2763478 1 0 0
+				key = 0.2 1 0 0
 				key = 2 1 0 0
 				key = 2.597534 0 -1.448665 -1.864674
 			}
