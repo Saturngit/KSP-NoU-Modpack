@@ -27,8 +27,8 @@ Acceleration_controller
 Autopilot_module_manager
 {
 	master_switch_key = P
-	window_x = 247
-	window_y = 140
+	window_x = 246
+	window_y = 141
 }
 settings_wnd
 {
