@@ -1,4 +1,4 @@
-patchedNodeCount = 1765
+patchedNodeCount = 1767
 UrlConfig
 {
 	parentUrl = /Physics.cfg
@@ -21638,7 +21638,7 @@ UrlConfig
 			CHECK
 			{
 				type = name
-				value = J33A354, Goblin 2, Nene 104B, J42-P8, Goblin 3, J47-GE17, Derwent 8, VK1, VK1A, VK1F, avon207, rb44tay, orpheus803, rm5, tbmProp, 152Prop, 609prop, herculesprop, KP12, predatorpropj85ge13, T57AP-T
+				value = J33A354, Goblin 2, Nene 104B, J42-P8, Goblin 3, J47-GE13, J47-GE17, Derwent 8, VK1, VK1A, VK1F, avon207, rb44tay, orpheus803, rm5, tbmProp, 152Prop, 609prop, herculesprop, KP12, predatorpropj85ge13, T57AP-T
 			}
 		}
 		FILTER
@@ -87417,6 +87417,736 @@ UrlConfig
 	parentUrl = Squad/Parts/Engine/miniJet/SmallJetEngine.cfg
 	PART
 	{
+		name = orpheus803
+		module = Part
+		author = Porkjet
+		node_stack_top = 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0
+		CoMOffset = 0.0, 0.3, 0.0
+		TechRequired = aviation
+		entryCost = 2000
+		cost = 450
+		category = Engine
+		subcategory = 0
+		title = Bristol Siddeley Orpheus 803
+		manufacturer = EngineEngineering
+		description = Late 50s egine from the Fiat G-91R. It was used in its other variants on the Fuji T-1, Folland Gnat and other planes.
+		attachRules = 1,0,1,0,0
+		emissiveConstant = 0.8
+		dragModelType = default
+		maximum_drag = 0.2
+		minimum_drag = 0.2
+		angularDrag = 2
+		crashTolerance = 7
+		maxTemp = 2000
+		bulkheadProfiles = size0
+		tags = aircraft (juno plane propuls turb
+		mass = 0.379
+		rescaleFactor = 0.6584
+		MODEL
+		{
+			model = Squad/Parts/Engine/miniJet/SmallJet
+		}
+		MODULE
+		{
+			name = ModuleAlternator
+			RESOURCE
+			{
+				name = ElectricCharge
+				rate = 1
+			}
+		}
+		MODULE
+		{
+			name = ModuleTestSubject
+			useStaging = True
+			useEvent = True
+			situationMask = 15
+			CONSTRAINT
+			{
+				type = OXYGEN
+				value = True
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = LT
+				value = 200
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = GT
+				value = 100
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = LT
+				value = 100
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = GT
+				value = 50
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = LT
+				value = 50
+				prestige = Exceptional
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = GT
+				value = 20
+				prestige = Exceptional
+			}
+			CONSTRAINT
+			{
+				type = SPEED
+				test = LT
+				value = 300
+				situationMask = 8
+			}
+			CONSTRAINT
+			{
+				type = SPEED
+				test = GT
+				value = 50
+				situationMask = 8
+			}
+			CONSTRAINT
+			{
+				type = DENSITY
+				test = GT
+				value = 0.3
+				situationMask = 8
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = DENSITY
+				test = GT
+				value = 0.1
+				situationMask = 8
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = DENSITY
+				test = GT
+				value = 0.05
+				situationMask = 8
+				prestige = Exceptional
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = GT
+				value = 4000
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = LT
+				value = 8000
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = GT
+				value = 1000
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = LT
+				value = 2000
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = GT
+				value = 500
+				prestige = Exceptional
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = LT
+				value = 1000
+				prestige = Exceptional
+			}
+			CONSTRAINT
+			{
+				type = REPEATABILITY
+				value = ALWAYS
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = REPEATABILITY
+				value = BODYANDSITUATION
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = REPEATABILITY
+				value = ONCEPERPART
+				prestige = Exceptional
+			}
+		}
+		MODULE
+		{
+			name = ModuleSurfaceFX
+			thrustProviderModuleIndex = 0
+			fxMax = 0.5
+			maxDistance = 10
+			falloff = 2
+			thrustTransformName = thrustTransform
+		}
+		EFFECTS
+		{
+			running_thrust
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_jet_deep
+					volume = 0.0 0.0
+					volume = 0.05 0.2
+					volume = 1.0 0.5
+					pitch = 0.0 1.2
+					pitch = 1.0 2.0
+					loop = true
+				}
+				PREFAB_PARTICLE
+				{
+					prefabName = fx_smokeTrail_light
+					transformName = thrustTransform
+					emission = 0.0 0.0
+					emission = 0.05 0.0
+					emission = 0.075 0.25
+					emission = 1.0 1.25
+					speed = 0.0 0.25
+					speed = 1.0 1.0
+					localOffset = 0, 0, 1
+					localRotation = 1, 0, 0, -90
+				}
+			}
+			running_turbine
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_jet_low
+					volume = 0.0 0.0
+					volume = 0.05 0.35
+					volume = 1.0 0.5
+					pitch = 0.0 0.6
+					pitch = 0.05 0.8
+					pitch = 1.0 1.5
+					loop = true
+				}
+			}
+			engage
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_vent_medium
+					volume = 0.8
+					pitch = 2.5
+					loop = false
+				}
+			}
+			disengage
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_vent_soft
+					volume = 0.8
+					pitch = 2.5
+					loop = false
+				}
+			}
+			flameout
+			{
+				PREFAB_PARTICLE
+				{
+					prefabName = fx_exhaustSparks_flameout_2
+					transformName = thrustTransform
+					oneShot = true
+				}
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_explosion_low
+					volume = 1.0
+					pitch = 2.0
+					loop = false
+				}
+			}
+		}
+		MODULE
+		{
+			name = GeometryPartModule
+		}
+		MODULE
+		{
+			name = FARAeroPartModule
+		}
+		MODULE
+		{
+			name = FARPartModule
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 22.20
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Cruise
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3332.20 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 1 0.1 -5.632538 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 20
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
+		}
+	}
+}
+UrlConfig
+{
+	parentUrl = Squad/Parts/Engine/miniJet/SmallJetEngine.cfg
+	PART
+	{
+		name = rb44tay
+		module = Part
+		author = Porkjet
+		node_stack_top = 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0
+		CoMOffset = 0.0, 0.3, 0.0
+		TechRequired = aviation
+		entryCost = 2000
+		cost = 450
+		category = Engine
+		subcategory = 0
+		title = Rolls-Royce RB.44 Tay 350
+		manufacturer = EngineEngineering
+		description = Late 50s egine from the Dassault M.D454 Mystère IV.
+		attachRules = 1,0,1,0,0
+		emissiveConstant = 0.8
+		dragModelType = default
+		maximum_drag = 0.2
+		minimum_drag = 0.2
+		angularDrag = 2
+		crashTolerance = 7
+		maxTemp = 2000
+		bulkheadProfiles = size0
+		tags = aircraft (juno plane propuls turb
+		mass = 0.935
+		rescaleFactor = 1.016
+		MODEL
+		{
+			model = Squad/Parts/Engine/miniJet/SmallJet
+		}
+		MODULE
+		{
+			name = ModuleAlternator
+			RESOURCE
+			{
+				name = ElectricCharge
+				rate = 1
+			}
+		}
+		MODULE
+		{
+			name = ModuleTestSubject
+			useStaging = True
+			useEvent = True
+			situationMask = 15
+			CONSTRAINT
+			{
+				type = OXYGEN
+				value = True
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = LT
+				value = 200
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = GT
+				value = 100
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = LT
+				value = 100
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = GT
+				value = 50
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = LT
+				value = 50
+				prestige = Exceptional
+			}
+			CONSTRAINT
+			{
+				type = SPEEDENV
+				test = GT
+				value = 20
+				prestige = Exceptional
+			}
+			CONSTRAINT
+			{
+				type = SPEED
+				test = LT
+				value = 300
+				situationMask = 8
+			}
+			CONSTRAINT
+			{
+				type = SPEED
+				test = GT
+				value = 50
+				situationMask = 8
+			}
+			CONSTRAINT
+			{
+				type = DENSITY
+				test = GT
+				value = 0.3
+				situationMask = 8
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = DENSITY
+				test = GT
+				value = 0.1
+				situationMask = 8
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = DENSITY
+				test = GT
+				value = 0.05
+				situationMask = 8
+				prestige = Exceptional
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = GT
+				value = 4000
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = LT
+				value = 8000
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = GT
+				value = 1000
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = LT
+				value = 2000
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = GT
+				value = 500
+				prestige = Exceptional
+			}
+			CONSTRAINT
+			{
+				type = ALTITUDEENV
+				test = LT
+				value = 1000
+				prestige = Exceptional
+			}
+			CONSTRAINT
+			{
+				type = REPEATABILITY
+				value = ALWAYS
+				prestige = Trivial
+			}
+			CONSTRAINT
+			{
+				type = REPEATABILITY
+				value = BODYANDSITUATION
+				prestige = Significant
+			}
+			CONSTRAINT
+			{
+				type = REPEATABILITY
+				value = ONCEPERPART
+				prestige = Exceptional
+			}
+		}
+		MODULE
+		{
+			name = ModuleSurfaceFX
+			thrustProviderModuleIndex = 0
+			fxMax = 0.5
+			maxDistance = 10
+			falloff = 2
+			thrustTransformName = thrustTransform
+		}
+		EFFECTS
+		{
+			running_thrust
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_jet_deep
+					volume = 0.0 0.0
+					volume = 0.05 0.2
+					volume = 1.0 0.5
+					pitch = 0.0 1.2
+					pitch = 1.0 2.0
+					loop = true
+				}
+				PREFAB_PARTICLE
+				{
+					prefabName = fx_smokeTrail_light
+					transformName = thrustTransform
+					emission = 0.0 0.0
+					emission = 0.05 0.0
+					emission = 0.075 0.25
+					emission = 1.0 1.25
+					speed = 0.0 0.25
+					speed = 1.0 1.0
+					localOffset = 0, 0, 1
+					localRotation = 1, 0, 0, -90
+				}
+			}
+			running_turbine
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_jet_low
+					volume = 0.0 0.0
+					volume = 0.05 0.35
+					volume = 1.0 0.5
+					pitch = 0.0 0.6
+					pitch = 0.05 0.8
+					pitch = 1.0 1.5
+					loop = true
+				}
+			}
+			engage
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_vent_medium
+					volume = 0.8
+					pitch = 2.5
+					loop = false
+				}
+			}
+			disengage
+			{
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_vent_soft
+					volume = 0.8
+					pitch = 2.5
+					loop = false
+				}
+			}
+			flameout
+			{
+				PREFAB_PARTICLE
+				{
+					prefabName = fx_exhaustSparks_flameout_2
+					transformName = thrustTransform
+					oneShot = true
+				}
+				AUDIO
+				{
+					channel = Ship
+					clip = sound_explosion_low
+					volume = 1.0
+					pitch = 2.0
+					loop = false
+				}
+			}
+		}
+		MODULE
+		{
+			name = GeometryPartModule
+		}
+		MODULE
+		{
+			name = FARAeroPartModule
+		}
+		MODULE
+		{
+			name = FARPartModule
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 34.32
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Cruise
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3271.45 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 1 0.1 -5.632538 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 20
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
+		}
+	}
+}
+UrlConfig
+{
+	parentUrl = Squad/Parts/Engine/miniJet/SmallJetEngine.cfg
+	PART
+	{
 		name = rm5
 		module = Part
 		author = Porkjet
@@ -87430,7 +88160,7 @@ UrlConfig
 		subcategory = 0
 		title = Svenska Flygmotor RM5
 		manufacturer = EngineEngineering
-		description = Engine from the Saab 32 Lansen. Derivative of the Avon engine used on many planes.
+		description = Late 50s egine from the Saab 32 Lansen. Derivative of the Avon engine used on many planes.
 		attachRules = 1,0,1,0,0
 		emissiveConstant = 0.8
 		dragModelType = default
@@ -87698,16 +88428,6 @@ UrlConfig
 					pitch = 2.0
 					loop = false
 				}
-			}
-		}
-		MODULE
-		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
 			}
 		}
 		MODULE
@@ -87736,16 +88456,16 @@ UrlConfig
 		{
 			name = ModuleEnginesFX
 			maxThrust = 31.38
+			minThrust = 0
 			machLimit = 0.80
 			machHeatMult = 25
 			engineID = Cruise
 			thrustVectorTransformName = thrustTransform
 			exhaustDamage = True
 			ignitionThreshold = 0.1
-			minThrust = 0
 			heatProduction = 15
 			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
+			engineAccelerationSpeed = 0.07
 			engineDecelerationSpeed = 0.5
 			fxOffset = 0, 0, 0.74
 			flameoutEffectName = flameout
@@ -87761,6 +88481,26 @@ UrlConfig
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3768.46 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.95 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
 			PROPELLANT
 			{
 				name = IntakeAir
@@ -87774,45 +88514,21 @@ UrlConfig
 				ratio = 1
 				DrawGauge = True
 			}
-			atmosphereCurve
-			{
-				key = 0 6400 0 0
-			}
-			atmosphereCurve
-			{
-				key = 0 3768.45838020353 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -9.035367 -9.035367
-				key = 0.06572519 0.717963 -4.59978 -4.231781
-				key = 0.625829 0.9035782 1.911265 1.911265
-				key = 0.8640261 0.9020107 -1.286595 -1.203041
-				key = 0.9558411 0.5541419 -8.769446 -8.769446
-				key = 1.000549 0 -3.57083 -12.64084
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-			}
 		}
 		MODULE
 		{
 			name = ModuleEnginesFX
 			maxThrust = 43.23
+			minThrust = 0
 			machLimit = 0.80
 			machHeatMult = 25
 			engineID = Injection
-			minThrust = 0
 			thrustVectorTransformName = thrustTransform
 			exhaustDamage = True
 			ignitionThreshold = 0.1
 			heatProduction = 15
 			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
+			engineAccelerationSpeed = 0.2
 			engineDecelerationSpeed = 0.5
 			fxOffset = 0, 0, 0.74
 			flameoutEffectName = flameout
@@ -87830,23 +88546,23 @@ UrlConfig
 			useAtmCurve = True
 			atmosphereCurve
 			{
-				key = 0 3768.45838020353 0 0
+				key = 0 1941.65 0 0
 			}
 			velCurve
 			{
-				key = 0 1.2 -9.035367 -9.035367
-				key = 0.06572519 0.717963 -4.59978 -4.231781
-				key = 0.625829 0.9035782 1.911265 1.911265
-				key = 0.8640261 0.9020107 -1.286595 -1.203041
-				key = 0.9558411 0.5541419 -8.769446 -8.769446
-				key = 1.000549 0 -3.57083 -12.64084
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 1 0.1 -6.812216 0
+				key = 2 0 -0.3376396 0
 			}
 			atmCurve
 			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
 			}
 			PROPELLANT
 			{
@@ -87858,7 +88574,7 @@ UrlConfig
 			{
 				name = LiquidFuel
 				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
+				ratio = 2
 				DrawGauge = True
 			}
 		}
@@ -87871,146 +88587,6 @@ UrlConfig
 			{
 				name = ElectricCharge
 				rate = 1.2
-			}
-		}
-		running_dry
-		{
-			PREFAB_PARTICLE
-			{
-				prefabName = fx_smokeTrail_light
-				transformName = smokePoint
-				emission = 0.0 0.0
-				emission = 0.05 0.0
-				emission = 0.075 0.25
-				emission = 1.0 1.25
-				speed = 0.0 0.25
-				speed = 1.0 1.0
-				localOffset = 0, 0, 1
-				localRotation = 1, 0, 0, -90
-			}
-			AUDIO
-			{
-				channel = Ship
-				clip = sound_jet_low
-				volume = 0.0 0.0
-				volume = 0.05 0.2
-				volume = 1.0 0.4
-				pitch = 0.0 0.2
-				pitch = 0.05 0.4
-				pitch = 1.0 0.5
-				loop = true
-			}
-		}
-		power_dry
-		{
-			AUDIO
-			{
-				channel = Ship
-				clip = sound_jet_deep
-				volume = 0.0 0.0
-				volume = 0.05 0.6
-				volume = 1.0 1.3
-				pitch = 0.0 0.3
-				pitch = 1.0 0.6
-				loop = true
-			}
-		}
-		running_wet
-		{
-			PREFAB_PARTICLE
-			{
-				prefabName = fx_smokeTrail_light
-				transformName = smokePoint
-				emission = 0.0 0.0
-				emission = 0.05 0.0
-				emission = 0.075 0.5
-				emission = 1.0 1.25
-				speed = 0.0 0.25
-				speed = 1.0 1.0
-				localOffset = 0, 0, 1
-				localRotation = 1, 0, 0, -90
-			}
-			AUDIO
-			{
-				channel = Ship
-				clip = sound_jet_low
-				volume = 0.0 0.0
-				volume = 0.05 0.2
-				volume = 1.0 0.35
-				pitch = 0.0 0.2
-				pitch = 0.05 0.4
-				pitch = 1.0 0.6
-				loop = true
-			}
-		}
-		power_wet
-		{
-			AUDIO
-			{
-				channel = Ship
-				clip = sound_rocket_spurts
-				volume = 0.0 0.0
-				volume = 0.1 0.4
-				volume = 1.0 1.0
-				pitch = 0.0 0.5
-				pitch = 0.33 0.8
-				pitch = 1.0 1.5
-				loop = true
-			}
-			MODEL_MULTI_PARTICLE
-			{
-				modelName = Squad/FX/afterburner_shock
-				transformName = smokePoint
-				emission = 0.0 0.0
-				emission = 0.05 0.05
-				emission = 0.33 0.1
-				emission = 1.0 1.0
-				speed = 0.0 0.0
-				speed = 0.05 0.05
-				speed = 0.33 0.16
-				speed = 1.0 1.0
-				energy = 0.0 1.5
-				energy = 0.33 1.0
-				energy = 1.0 1.0
-			}
-		}
-		engage
-		{
-			AUDIO
-			{
-				channel = Ship
-				clip = sound_vent_medium
-				volume = 1.0
-				pitch = 2.0
-				loop = false
-			}
-		}
-		disengage
-		{
-			AUDIO
-			{
-				channel = Ship
-				clip = sound_vent_soft
-				volume = 1.0
-				pitch = 2.0
-				loop = false
-			}
-		}
-		flameout
-		{
-			PREFAB_PARTICLE
-			{
-				prefabName = fx_exhaustSparks_flameout_2
-				transformName = smokePoint
-				oneShot = true
-			}
-			AUDIO
-			{
-				channel = Ship
-				clip = sound_explosion_low
-				volume = 1.0
-				pitch = 2.0
-				loop = false
 			}
 		}
 	}
@@ -88032,7 +88608,7 @@ UrlConfig
 		subcategory = 0
 		title = Rolls-Royce Avon 207
 		manufacturer = EngineEngineering
-		description = Engine from the Hawker Hunter. It was used in its other variants on the Supermarine Swift and Scimitar, Vickers Valiant, English Electric Lightning and Canberra, Saab 32 Lansen and Saab 35 Draken, Fairley Delta 2, CAC Sabre, de Havilland Sea Vixen and Ryan X-13.
+		description = Late 50s egine from the Hawker Hunter. It was used in its other variants on the Supermarine Swift and Scimitar, Vickers Valiant, English Electric Lightning and Canberra, Saab 32 Lansen and Saab 35 Draken, Fairley Delta 2, CAC Sabre, de Havilland Sea Vixen and Ryan X-13.
 		attachRules = 1,0,1,0,0
 		emissiveConstant = 0.8
 		dragModelType = default
@@ -88048,70 +88624,6 @@ UrlConfig
 		MODEL
 		{
 			model = Squad/Parts/Engine/miniJet/SmallJet
-		}
-		MODULE
-		{
-			name = ModuleEnginesFX
-			engineID = Cruise
-			thrustVectorTransformName = thrustTransform
-			exhaustDamage = True
-			ignitionThreshold = 0.1
-			minThrust = 0
-			maxThrust = 44.7
-			heatProduction = 15
-			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
-			engineDecelerationSpeed = 0.5
-			fxOffset = 0, 0, 0.74
-			flameoutEffectName = flameout
-			powerEffectName = running_thrust
-			engageEffectName = engage
-			disengageEffectName = disengage
-			spoolEffectName = running_turbine
-			engineSpoolIdle = 0.05
-			engineSpoolTime = 2.0
-			EngineType = Turbine
-			exhaustDamageMultiplier = 4
-			clampPropReceived = True
-			atmChangeFlow = True
-			useVelCurve = True
-			useAtmCurve = True
-			machLimit = 0.75
-			machHeatMult = 3.5
-			PROPELLANT
-			{
-				name = IntakeAir
-				ignoreForIsp = True
-				ratio = 22
-			}
-			PROPELLANT
-			{
-				name = LiquidFuel
-				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
-				DrawGauge = True
-			}
-			atmosphereCurve
-			{
-				key = 0 3589.32391494738 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -9.035367 -9.035367
-				key = 0.06572519 0.717963 -4.59978 -4.231781
-				key = 0.5040334 0.8142685 1.911265 1.911265
-				key = 0.7041426 0.9984028 -0.3714557 -0.3714557
-				key = 1.000549 0 -3.57083 -12.64084
-				key = 2.4 0 0 0
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-				key = 1 1 0.5529748 0
-			}
 		}
 		MODULE
 		{
@@ -88369,16 +88881,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -88388,6 +88890,69 @@ UrlConfig
 		MODULE
 		{
 			name = FARPartModule
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 44.7
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Cruise
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3589.32 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 1 0.1 -5.632538 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 20
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
 		}
 	}
 }
@@ -88408,7 +88973,7 @@ UrlConfig
 		subcategory = 0
 		title = Klimov VK-1F
 		manufacturer = EngineEngineering
-		description = Engine from the Mikoyan-Gurevich 17.  It was used in its other variants on the MiG-15 and Ilyushin Il-28.
+		description = Late 50s egine from the Mikoyan-Gurevich 17.  It was used in its other variants on the MiG-15 and Ilyushin Il-28.
 		attachRules = 1,0,1,0,0
 		emissiveConstant = 0.8
 		dragModelType = default
@@ -88681,16 +89246,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -88715,16 +89270,16 @@ UrlConfig
 		{
 			name = ModuleEnginesFX
 			maxThrust = 26.47
+			minThrust = 0
 			machLimit = 0.80
 			machHeatMult = 25
 			engineID = Cruise
 			thrustVectorTransformName = thrustTransform
 			exhaustDamage = True
 			ignitionThreshold = 0.1
-			minThrust = 0
 			heatProduction = 15
 			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
+			engineAccelerationSpeed = 0.07
 			engineDecelerationSpeed = 0.5
 			fxOffset = 0, 0, 0.74
 			flameoutEffectName = flameout
@@ -88740,6 +89295,26 @@ UrlConfig
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 2308.01 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.95 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
 			PROPELLANT
 			{
 				name = IntakeAir
@@ -88753,45 +89328,21 @@ UrlConfig
 				ratio = 1
 				DrawGauge = True
 			}
-			atmosphereCurve
-			{
-				key = 0 6400 0 0
-			}
-			atmosphereCurve
-			{
-				key = 0 2308.00648418727 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -9.035367 -9.035367
-				key = 0.04342447 0.7110965 -6.773765 -6.081667
-				key = 0.1464084 0.4501549 -0.8669023 -0.8397105
-				key = 0.5069404 0.9020134 1.53343 1.53343
-				key = 0.6907586 0.9984079 -0.09090188 -0.05035013
-				key = 0.9326172 0 -3.57083 -12.64084
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-			}
 		}
 		MODULE
 		{
 			name = ModuleEnginesFX
 			maxThrust = 33.11
+			minThrust = 0
 			machLimit = 0.80
 			machHeatMult = 25
 			engineID = Injection
-			minThrust = 0
 			thrustVectorTransformName = thrustTransform
 			exhaustDamage = True
 			ignitionThreshold = 0.1
 			heatProduction = 15
 			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
+			engineAccelerationSpeed = 0.2
 			engineDecelerationSpeed = 0.5
 			fxOffset = 0, 0, 0.74
 			flameoutEffectName = flameout
@@ -88809,23 +89360,23 @@ UrlConfig
 			useAtmCurve = True
 			atmosphereCurve
 			{
-				key = 0 2308.00648418727 0 0
+				key = 0 1379.61 0 0
 			}
 			velCurve
 			{
-				key = 0 1.2 -9.035367 -9.035367
-				key = 0.04342447 0.7110965 -6.773765 -6.081667
-				key = 0.1464084 0.4501549 -0.8669023 -0.8397105
-				key = 0.5069404 0.9020134 1.53343 1.53343
-				key = 0.6907586 0.9984079 -0.09090188 -0.05035013
-				key = 0.9326172 0 -3.57083 -12.64084
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.95 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
 			}
 			atmCurve
 			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
 			}
 			PROPELLANT
 			{
@@ -88837,7 +89388,7 @@ UrlConfig
 			{
 				name = LiquidFuel
 				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
+				ratio = 2
 				DrawGauge = True
 			}
 		}
@@ -88871,7 +89422,7 @@ UrlConfig
 		subcategory = 0
 		title = Klimov VK-1A
 		manufacturer = EngineEngineering
-		description = Engine from the Mikoyan-Gurevich 15bis.  It was used in its other variants on the MiG-17 and Ilyushin Il-28.
+		description = Late 50s egine from the Mikoyan-Gurevich 15bis.  It was used in its other variants on the MiG-17 and Ilyushin Il-28.
 		attachRules = 1,0,1,0,0
 		emissiveConstant = 0.8
 		dragModelType = default
@@ -89144,16 +89695,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -89178,16 +89719,16 @@ UrlConfig
 		{
 			name = ModuleEnginesFX
 			maxThrust = 26.47
+			minThrust = 0
 			machLimit = 0.80
 			machHeatMult = 25
 			engineID = Cruise
 			thrustVectorTransformName = thrustTransform
 			exhaustDamage = True
 			ignitionThreshold = 0.1
-			minThrust = 0
 			heatProduction = 15
 			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
+			engineAccelerationSpeed = 0.07
 			engineDecelerationSpeed = 0.5
 			fxOffset = 0, 0, 0.74
 			flameoutEffectName = flameout
@@ -89203,6 +89744,26 @@ UrlConfig
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3363.70 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.9 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
 			PROPELLANT
 			{
 				name = IntakeAir
@@ -89216,35 +89777,12 @@ UrlConfig
 				ratio = 1
 				DrawGauge = True
 			}
-			atmosphereCurve
-			{
-				key = 0 6400 0 0
-			}
-			atmosphereCurve
-			{
-				key = 0 3363.69573286605 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -9.035367 -9.035367
-				key = 0.04342447 0.7110965 -6.773765 -6.081667
-				key = 0.1464084 0.4501549 -0.8669023 -0.8397105
-				key = 0.5069404 0.9020134 1.53343 1.53343
-				key = 0.6907586 0.9984079 -0.09090188 -0.05035013
-				key = 0.9326172 0 -3.57083 -12.64084
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-			}
 		}
 		MODULE
 		{
 			name = ModuleEnginesFX
 			maxThrust = 30.4
+			minThrust = 0
 			machLimit = 0.80
 			machHeatMult = 25
 			engineID = Injection
@@ -89272,23 +89810,23 @@ UrlConfig
 			useAtmCurve = True
 			atmosphereCurve
 			{
-				key = 0 3363.69573286605 0 0
+				key = 0 3363.70 0 0
 			}
 			velCurve
 			{
-				key = 0 1.2 -9.035367 -9.035367
-				key = 0.04342447 0.7110965 -6.773765 -6.081667
-				key = 0.1464084 0.4501549 -0.8669023 -0.8397105
-				key = 0.5069404 0.9020134 1.53343 1.53343
-				key = 0.6907586 0.9984079 -0.09090188 -0.05035013
-				key = 0.9326172 0 -3.57083 -12.64084
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.9 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
 			}
 			atmCurve
 			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
 			}
 			PROPELLANT
 			{
@@ -89300,14 +89838,14 @@ UrlConfig
 			{
 				name = LiquidFuel
 				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
+				ratio = 2
 				DrawGauge = True
 			}
 			PROPELLANT
 			{
 				name = Injector
 				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 2
+				ratio = 1
 			}
 		}
 		MODULE
@@ -89346,7 +89884,7 @@ UrlConfig
 		subcategory = 0
 		title = Klimov VK-1
 		manufacturer = EngineEngineering
-		description = Engine from the Mikoyan-Gurevich 15. It was used in its other variants on the MiG-17 and Ilyushin Il-28.
+		description = Late 50s egine from the Mikoyan-Gurevich 15. It was used in its other variants on the MiG-17 and Ilyushin Il-28.
 		attachRules = 1,0,1,0,0
 		emissiveConstant = 0.8
 		dragModelType = default
@@ -89362,70 +89900,6 @@ UrlConfig
 		MODEL
 		{
 			model = Squad/Parts/Engine/miniJet/SmallJet
-		}
-		MODULE
-		{
-			name = ModuleEnginesFX
-			engineID = Cruise
-			thrustVectorTransformName = thrustTransform
-			exhaustDamage = True
-			ignitionThreshold = 0.1
-			minThrust = 0
-			maxThrust = 26.47
-			heatProduction = 15
-			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
-			engineDecelerationSpeed = 0.5
-			fxOffset = 0, 0, 0.74
-			flameoutEffectName = flameout
-			powerEffectName = running_thrust
-			engageEffectName = engage
-			disengageEffectName = disengage
-			spoolEffectName = running_turbine
-			engineSpoolIdle = 0.05
-			engineSpoolTime = 2.0
-			EngineType = Turbine
-			exhaustDamageMultiplier = 4
-			clampPropReceived = True
-			atmChangeFlow = True
-			useVelCurve = True
-			useAtmCurve = True
-			machLimit = 0.75
-			machHeatMult = 3.5
-			PROPELLANT
-			{
-				name = IntakeAir
-				ignoreForIsp = True
-				ratio = 22
-			}
-			PROPELLANT
-			{
-				name = LiquidFuel
-				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
-				DrawGauge = True
-			}
-			atmosphereCurve
-			{
-				key = 0 3363.69573286605 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -9.035367 -9.035367
-				key = 0.04342447 0.7110965 -6.773765 -6.081667
-				key = 0.1464084 0.4501549 -0.8669023 -0.8397105
-				key = 0.405561 0.8172814 1.53343 1.53343
-				key = 0.5396966 0.993829 -0.09090188 -0.05035013
-				key = 0.9326172 0 -3.57083 -12.64084
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-				key = 1 1 0.5529748 0
-			}
 		}
 		MODULE
 		{
@@ -89683,16 +90157,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -89702,6 +90166,69 @@ UrlConfig
 		MODULE
 		{
 			name = FARPartModule
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 26.47
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Cruise
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3363.69573286605 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.9 0.1 -5.632538 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 20
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
 		}
 	}
 }
@@ -89722,7 +90249,7 @@ UrlConfig
 		subcategory = 0
 		title = General Electric J47-GE-17
 		manufacturer = EngineEngineering
-		description = Engine from the North American F-86D Sabre. It was used in its other versions on the Boeing B-47 Stratojet, KB-50J Superfortress, KC-97 Stratofreighter, North American B-45, FJ-2 Fury, F-86 Sabre and F-86D Sabre dog, Republic XF-91, Martin XB-51, Curtiss XF-87 Blackhawk, Convair NB-36 and B-36 Peacemaker.
+		description = Late 50s egine from the North American F-86D Sabre. It was used in its other versions on the Boeing B-47 Stratojet, KB-50J Superfortress, KC-97 Stratofreighter, North American B-45, FJ-2 Fury, F-86 Sabre and F-86D Sabre dog, Republic XF-91, Martin XB-51, Curtiss XF-87 Blackhawk, Convair NB-36 and B-36 Peacemaker.
 		attachRules = 1,0,1,0,0
 		emissiveConstant = 0.8
 		dragModelType = default
@@ -89995,16 +90522,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -90029,16 +90546,16 @@ UrlConfig
 		{
 			name = ModuleEnginesFX
 			maxThrust = 24
+			minThrust = 0
 			machLimit = 0.80
 			machHeatMult = 25
 			engineID = Cruise
 			thrustVectorTransformName = thrustTransform
 			exhaustDamage = True
 			ignitionThreshold = 0.1
-			minThrust = 0
 			heatProduction = 15
 			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
+			engineAccelerationSpeed = 0.07
 			engineDecelerationSpeed = 0.5
 			fxOffset = 0, 0, 0.74
 			flameoutEffectName = flameout
@@ -90054,6 +90571,26 @@ UrlConfig
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3551.80 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 1 0.1 -5.632538 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
 			PROPELLANT
 			{
 				name = IntakeAir
@@ -90067,36 +90604,12 @@ UrlConfig
 				ratio = 1
 				DrawGauge = True
 			}
-			atmosphereCurve
-			{
-				key = 0 6400 0 0
-			}
-			atmosphereCurve
-			{
-				key = 0 3551.80484963434 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -9.035367 -9.035367
-				key = 0.05051715 0.6561536 -5.815102 -4.537333
-				key = 0.2055964 0.3391959 -0.03743717 0.1124249
-				key = 0.5659943 0.713878 3.299279 3.249816
-				key = 0.747447 0.9571812 -0.3714557 -0.3714557
-				key = 0.8352427 0.6605502 -8.329865 -7.718513
-				key = 0.8944703 0.002319336 -12.64084 -12.64084
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-			}
 		}
 		MODULE
 		{
 			name = ModuleEnginesFX
 			maxThrust = 33
+			minThrust = 0
 			machLimit = 0.80
 			machHeatMult = 25
 			engineID = Injection
@@ -90106,7 +90619,7 @@ UrlConfig
 			ignitionThreshold = 0.1
 			heatProduction = 15
 			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
+			engineAccelerationSpeed = 0.2
 			engineDecelerationSpeed = 0.5
 			fxOffset = 0, 0, 0.74
 			flameoutEffectName = flameout
@@ -90122,6 +90635,26 @@ UrlConfig
 			atmChangeFlow = True
 			useVelCurve = True
 			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 1483.80 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 1 0.1 -5.632538 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
 			PROPELLANT
 			{
 				name = IntakeAir
@@ -90167,7 +90700,7 @@ UrlConfig
 		subcategory = 0
 		title = General Electric J47-GE13
 		manufacturer = EngineEngineering
-		description = Engine from the North American F-86 Sabre. It was used in its other versions on the Boeing B-47 Stratojet, KB-50J Superfortress, KC-97 Stratofreighter, North American B-45, FJ-2 Fury, F-86 Sabre and F-86D Sabre dog, Republic XF-91, Martin XB-51, Curtiss XF-87 Blackhawk, Convair NB-36 and B-36 Peacemaker.
+		description = Late 50s egine from the North American F-86 Sabre. It was used in its other versions on the Boeing B-47 Stratojet, KB-50J Superfortress, KC-97 Stratofreighter, North American B-45, FJ-2 Fury, F-86 Sabre and F-86D Sabre dog, Republic XF-91, Martin XB-51, Curtiss XF-87 Blackhawk, Convair NB-36 and B-36 Peacemaker.
 		attachRules = 1,0,1,0,0
 		emissiveConstant = 0.8
 		dragModelType = default
@@ -90182,70 +90715,6 @@ UrlConfig
 		MODEL
 		{
 			model = Squad/Parts/Engine/miniJet/SmallJet
-		}
-		MODULE
-		{
-			name = ModuleEnginesFX
-			engineID = Cruise
-			thrustVectorTransformName = thrustTransform
-			exhaustDamage = True
-			ignitionThreshold = 0.1
-			minThrust = 0
-			maxThrust = 26.3
-			heatProduction = 15
-			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
-			engineDecelerationSpeed = 0.5
-			fxOffset = 0, 0, 0.74
-			flameoutEffectName = flameout
-			powerEffectName = running_thrust
-			engageEffectName = engage
-			disengageEffectName = disengage
-			spoolEffectName = running_turbine
-			engineSpoolIdle = 0.05
-			engineSpoolTime = 2.0
-			EngineType = Turbine
-			exhaustDamageMultiplier = 4
-			clampPropReceived = True
-			atmChangeFlow = True
-			useVelCurve = True
-			useAtmCurve = True
-			machLimit = 0.75
-			machHeatMult = 3.5
-			PROPELLANT
-			{
-				name = IntakeAir
-				ignoreForIsp = True
-				ratio = 22
-			}
-			PROPELLANT
-			{
-				name = LiquidFuel
-				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
-				DrawGauge = True
-			}
-			atmosphereCurve
-			{
-				key = 0 7500 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -9.035367 -9.035367
-				key = 0.05051715 0.6561536 -5.815102 -4.537333
-				key = 0.2055964 0.3391959 -0.03743717 0.1124249
-				key = 0.5659943 0.713878 3.299279 3.249816
-				key = 0.747447 0.9571812 -0.3714557 -0.3714557
-				key = 0.8352427 0.6605502 -8.329865 -7.718513
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-				key = 1 1 0.5529748 0
-			}
 		}
 		MODULE
 		{
@@ -90503,16 +90972,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -90522,6 +90981,69 @@ UrlConfig
 		MODULE
 		{
 			name = FARPartModule
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 26.3
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Cruise
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3551.80 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.9 0.1 -5.632538 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 20
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
 		}
 	}
 }
@@ -90542,7 +91064,7 @@ UrlConfig
 		subcategory = 0
 		title = Rolls-Royce RB.37 Derwent 8
 		manufacturer = EngineEngineering
-		description = Engine from Gloster Meteor F.8. Used in pairs. It was used in its other versions on the Avro 707 and C102, Fairley Delta 1, Fokker S.14, Nord 1601 and Tupolev 73 and 78.
+		description = Late 50s egine from Gloster Meteor F.8. Used in pairs. It was used in its other versions on the Avro 707 and C102, Fairley Delta 1, Fokker S.14, Nord 1601 and Tupolev 73 and 78.
 		attachRules = 1,0,1,0,0
 		emissiveConstant = 0.8
 		dragModelType = default
@@ -90558,70 +91080,6 @@ UrlConfig
 		MODEL
 		{
 			model = Squad/Parts/Engine/miniJet/SmallJet
-		}
-		MODULE
-		{
-			name = ModuleEnginesFX
-			engineID = Cruise
-			thrustVectorTransformName = thrustTransform
-			exhaustDamage = True
-			ignitionThreshold = 0.1
-			minThrust = 0
-			maxThrust = 15.44
-			heatProduction = 15
-			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
-			engineDecelerationSpeed = 0.5
-			fxOffset = 0, 0, 0.74
-			flameoutEffectName = flameout
-			powerEffectName = running_thrust
-			engageEffectName = engage
-			disengageEffectName = disengage
-			spoolEffectName = running_turbine
-			engineSpoolIdle = 0.05
-			engineSpoolTime = 2.0
-			EngineType = Turbine
-			exhaustDamageMultiplier = 4
-			clampPropReceived = True
-			atmChangeFlow = True
-			useVelCurve = True
-			useAtmCurve = True
-			machLimit = 0.75
-			machHeatMult = 3.5
-			PROPELLANT
-			{
-				name = IntakeAir
-				ignoreForIsp = True
-				ratio = 22
-			}
-			PROPELLANT
-			{
-				name = LiquidFuel
-				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
-				DrawGauge = True
-			}
-			atmosphereCurve
-			{
-				key = 0 3529.60645364539 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -19.48696 -19.48696
-				key = 0.03323057 0.6081643 -7.359376 -6.144047
-				key = 0.0832869 0.4213853 -1.250154 -1.250154
-				key = 0.3941496 0.517141 1.00944 1.014995
-				key = 0.7057294 0.9959769 0.08237964 0.05364776
-				key = 0.8009656 0.8778697 -2.933757 -3.108468
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-				key = 1 1 0.5529748 0
-			}
 		}
 		MODULE
 		{
@@ -90879,16 +91337,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -90898,6 +91346,69 @@ UrlConfig
 		MODULE
 		{
 			name = FARPartModule
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 15.44
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Cruise
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3529.60645364539 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.9 0.1 -5.632538 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 20
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
 		}
 	}
 }
@@ -90928,78 +91439,12 @@ UrlConfig
 		title = Rolls-Royce RB.41 Nene 104
 		name = Nene 104B
 		manufacturer = EngineEngineering
-		description = Engine from Dassault M.D.450 Ouragan also used in its different variants on the de Havilland Vampire, Hawker Sea Hawk, Supermarine Attacker and many other applications.
+		description = Early 50s engine from Dassault M.D.450 Ouragan also used in its different variants on the de Havilland Vampire, Hawker Sea Hawk, Supermarine Attacker and many other applications.
 		mass = 0.725
 		rescaleFactor = 1.00584
 		MODEL
 		{
 			model = Squad/Parts/Engine/miniJet/SmallJet
-		}
-		MODULE
-		{
-			name = ModuleEnginesFX
-			engineID = Cruise
-			thrustVectorTransformName = thrustTransform
-			exhaustDamage = True
-			ignitionThreshold = 0.1
-			minThrust = 0
-			heatProduction = 15
-			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
-			engineDecelerationSpeed = 0.5
-			fxOffset = 0, 0, 0.74
-			flameoutEffectName = flameout
-			powerEffectName = running_thrust
-			engageEffectName = engage
-			disengageEffectName = disengage
-			spoolEffectName = running_turbine
-			engineSpoolIdle = 0.05
-			engineSpoolTime = 2.0
-			EngineType = Turbine
-			exhaustDamageMultiplier = 4
-			clampPropReceived = True
-			atmChangeFlow = True
-			useVelCurve = True
-			useAtmCurve = True
-			machLimit = 0.75
-			machHeatMult = 3.5
-			maxThrust = 23.13
-			PROPELLANT
-			{
-				name = IntakeAir
-				ignoreForIsp = True
-				ratio = 22
-			}
-			PROPELLANT
-			{
-				name = LiquidFuel
-				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
-				DrawGauge = True
-			}
-			atmosphereCurve
-			{
-				key = 0 3397.89330615019 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -19.48696 -19.48696
-				key = 0.02688291 0.6678109 -10.96772 -14.6181
-				key = 0.06129369 0.4302454 -1.250154 -1.250154
-				key = 0.3630261 0.6026525 1.288329 1.208804
-				key = 0.6208109 0.9064245 0.07293478 0.04255103
-				key = 0.6982434 0.831338 -2.933757 -3.108468
-				key = 0.7551408 0.3881795 -17.81278 -14.63003
-				key = 0.7718416 0 -18.8817 -18.31386
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-				key = 1 1 0.5529748 0
-			}
 		}
 		MODULE
 		{
@@ -91257,16 +91702,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -91277,6 +91712,69 @@ UrlConfig
 		{
 			name = FARPartModule
 		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 23.13
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Cruise
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3397.89 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.8 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 20
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
+		}
 	}
 }
 UrlConfig
@@ -91284,7 +91782,6 @@ UrlConfig
 	parentUrl = Squad/Parts/Engine/miniJet/SmallJetEngine.cfg
 	PART
 	{
-		name = Goblin 3
 		module = Part
 		author = Porkjet
 		node_stack_top = 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0
@@ -91294,9 +91791,7 @@ UrlConfig
 		cost = 450
 		category = Engine
 		subcategory = 0
-		title = de Havilland Goblin 3
-		manufacturer = EngineEngineering
-		description = Engine from de Havilland Vampire FB.6 also used in its different versions on the de Havilland DH 108 Swallow, Fiat G.80, Saab 21R, Gloster Meteor, Lockheed XP-80 and Curtiss XF15C=1.
+		description = Early 50s engine from de Havilland Vampire FB.6 also used in its different versions on the de Havilland DH 108 Swallow, Fiat G.80, Saab 21R, Gloster Meteor, Lockheed XP-80 and Curtiss XF15C=1.
 		attachRules = 1,0,1,0,0
 		emissiveConstant = 0.8
 		dragModelType = default
@@ -91307,77 +91802,14 @@ UrlConfig
 		maxTemp = 2000
 		bulkheadProfiles = size0
 		tags = aircraft (juno plane propuls turb
-		rescaleFactor = 0.8
+		title = de Havilland Goblin 3
+		name = Goblin 3
+		manufacturer = EngineEngineering
 		mass = 0.7
+		rescaleFactor = 1.04
 		MODEL
 		{
 			model = Squad/Parts/Engine/miniJet/SmallJet
-		}
-		MODULE
-		{
-			name = ModuleEnginesFX
-			engineID = Cruise
-			thrustVectorTransformName = thrustTransform
-			exhaustDamage = True
-			ignitionThreshold = 0.1
-			minThrust = 0
-			maxThrust = 14.9
-			heatProduction = 15
-			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
-			engineDecelerationSpeed = 0.5
-			fxOffset = 0, 0, 0.74
-			flameoutEffectName = flameout
-			powerEffectName = running_thrust
-			engageEffectName = engage
-			disengageEffectName = disengage
-			spoolEffectName = running_turbine
-			engineSpoolIdle = 0.05
-			engineSpoolTime = 2.0
-			EngineType = Turbine
-			exhaustDamageMultiplier = 4
-			clampPropReceived = True
-			atmChangeFlow = True
-			useVelCurve = True
-			useAtmCurve = True
-			machLimit = 0.75
-			machHeatMult = 3.5
-			PROPELLANT
-			{
-				name = IntakeAir
-				ignoreForIsp = True
-				ratio = 22
-			}
-			PROPELLANT
-			{
-				name = LiquidFuel
-				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
-				DrawGauge = True
-			}
-			atmosphereCurve
-			{
-				key = 0 3088.99391468199 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -19.48696 -19.48696
-				key = 0.02144316 0.6379799 -7.359376 -6.144047
-				key = 0.07232575 0.4621974 -1.250154 -1.250154
-				key = 0.302113 0.5154638 1.00944 1.100213
-				key = 0.593101 0.8789511 0.07293478 0.04255103
-				key = 0.6663831 0.8015681 -2.933757 -3.108468
-				key = 0.7046037 0.3858906 -17.81278 -14.63003
-				key = 0.7235627 0.002288818 -18.8817 -18.31386
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-				key = 1 1 0.5529748 0
-			}
 		}
 		MODULE
 		{
@@ -91635,16 +92067,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -91654,6 +92076,69 @@ UrlConfig
 		MODULE
 		{
 			name = FARPartModule
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 14.9
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Cruise
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3088.99 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.8 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 20
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
 		}
 	}
 }
@@ -91684,78 +92169,12 @@ UrlConfig
 		title = de Havilland Goblin 2
 		name = Goblin 2
 		manufacturer = EngineEngineering
-		description = Engine from Saab 21R also used in its different versions on the de Havilland Vampire and DH 108 Swallow, Fiat G.80, Gloster Meteor, Lockheed XP-80 and Curtiss XF15C=1.
+		description = Early 50s engine from Saab 21R also used in its different versions on the de Havilland Vampire and DH 108 Swallow, Fiat G.80, Gloster Meteor, Lockheed XP-80 and Curtiss XF15C=1.
 		mass = 0.7
 		rescaleFactor = 1.04
 		MODEL
 		{
 			model = Squad/Parts/Engine/miniJet/SmallJet
-		}
-		MODULE
-		{
-			name = ModuleEnginesFX
-			engineID = Cruise
-			thrustVectorTransformName = thrustTransform
-			exhaustDamage = True
-			ignitionThreshold = 0.1
-			minThrust = 0
-			heatProduction = 15
-			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
-			engineDecelerationSpeed = 0.5
-			fxOffset = 0, 0, 0.74
-			flameoutEffectName = flameout
-			powerEffectName = running_thrust
-			engageEffectName = engage
-			disengageEffectName = disengage
-			spoolEffectName = running_turbine
-			engineSpoolIdle = 0.05
-			engineSpoolTime = 2.0
-			EngineType = Turbine
-			exhaustDamageMultiplier = 4
-			clampPropReceived = True
-			atmChangeFlow = True
-			useVelCurve = True
-			useAtmCurve = True
-			machLimit = 0.75
-			machHeatMult = 3.5
-			maxThrust = 13.79
-			PROPELLANT
-			{
-				name = IntakeAir
-				ignoreForIsp = True
-				ratio = 22
-			}
-			PROPELLANT
-			{
-				name = LiquidFuel
-				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
-				DrawGauge = True
-			}
-			atmosphereCurve
-			{
-				key = 0 3088.99391468199 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -19.48696 -19.48696
-				key = 0.04533842 0.6540627 -7.359376 -6.144047
-				key = 0.09234533 0.5080957 -1.250154 -1.250154
-				key = 0.347096 0.5614233 1.00944 1.100213
-				key = 0.6208109 0.8949804 0.07293478 0.04255103
-				key = 0.6982434 0.8198939 -2.933757 -3.108468
-				key = 0.7551408 0.3767354 -17.81278 -14.63003
-				key = 0.7718416 0 -18.8817 -18.31386
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-				key = 1 1 0.5529748 0
-			}
 		}
 		MODULE
 		{
@@ -92013,16 +92432,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -92032,6 +92441,69 @@ UrlConfig
 		MODULE
 		{
 			name = FARPartModule
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 13.79
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Cruise
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3088.99 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.8 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 20
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
 		}
 	}
 }
@@ -92062,7 +92534,7 @@ UrlConfig
 		title = Pratt & Whitney J48P-6A
 		name = J42-P8
 		manufacturer = EngineEngineering
-		description = Engine from Grumman F-9F-5 Panther and in its other versions on the F9F=6/8 Cougar, Lockheed F-94C Starfire and North American YF-93.
+		description = Early 50s engine from Grumman F-9F-5 Panther and in its other versions on the F9F=6/8 Cougar, Lockheed F-94C Starfire and North American YF-93.
 		rescaleFactor = 1.024
 		mass = 0.94
 		MODEL
@@ -92325,16 +92797,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -92359,85 +92821,16 @@ UrlConfig
 		{
 			name = ModuleEnginesFX
 			maxThrust = 27.8
+			minThrust = 0
 			machLimit = 0.80
 			machHeatMult = 25
 			engineID = Cruise
 			thrustVectorTransformName = thrustTransform
 			exhaustDamage = True
 			ignitionThreshold = 0.1
-			minThrust = 0
 			heatProduction = 15
 			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
-			engineDecelerationSpeed = 0.5
-			fxOffset = 0, 0, 0.74
-			flameoutEffectName = flameout
-			powerEffectName = running_thrust
-			engageEffectName = engage
-			disengageEffectName = disengage
-			spoolEffectName = running_turbine
-			engineSpoolIdle = 0.05
-			engineSpoolTime = 2.0
-			EngineType = Turbine
-			exhaustDamageMultiplier = 4
-			clampPropReceived = True
-			atmChangeFlow = True
-			useVelCurve = True
-			useAtmCurve = True
-			PROPELLANT
-			{
-				name = IntakeAir
-				ignoreForIsp = True
-				ratio = 22
-			}
-			PROPELLANT
-			{
-				name = LiquidFuel
-				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
-				DrawGauge = True
-			}
-			atmosphereCurve
-			{
-				key = 0 6400 0 0
-			}
-			atmosphereCurve
-			{
-				key = 0 3185.5249745158\t 0 0
-			}
-			velCurve
-			{
-				key = 0 1.212713 0 0
-				key = 0.02295274 0.6748646 -7.10981 -6.663388
-				key = 0.1086104 0.438296 -0.2953374 -0.1108979
-				key = 0.3538157 0.6539074 1.90551 1.90551
-				key = 0.5402235 0.9515412 0.2328322 0
-				key = 0.6930912 0.6856008 -3.271749 -3.26897
-				key = 0.761091 0.2638855 -10.98552 -16.31158
-				key = 0.7744448 0 -38.47976 -8.38845
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-			}
-		}
-		MODULE
-		{
-			name = ModuleEnginesFX
-			maxThrust = 31
-			machLimit = 0.80
-			machHeatMult = 25
-			engineID = Injection
-			minThrust = 0
-			thrustVectorTransformName = thrustTransform
-			exhaustDamage = True
-			ignitionThreshold = 0.1
-			heatProduction = 15
-			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
+			engineAccelerationSpeed = 0.07
 			engineDecelerationSpeed = 0.5
 			fxOffset = 0, 0, 0.74
 			flameoutEffectName = flameout
@@ -92459,14 +92852,83 @@ UrlConfig
 			}
 			velCurve
 			{
-				key = 0 1.212713 0 0
-				key = 0.02295274 0.6748646 -7.10981 -6.663388
-				key = 0.1086104 0.438296 -0.2953374 -0.1108979
-				key = 0.3538157 0.6539074 1.90551 1.90551
-				key = 0.5402235 0.9515412 0.2328322 0
-				key = 0.6930912 0.6856008 -3.271749 -3.26897
-				key = 0.761091 0.2638855 -10.98552 -16.31158
-				key = 0.7744448 0 -38.47976 -8.38845
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.8 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 22
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 31
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Injection
+			minThrust = 0
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3185.5249745158 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.8 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
 			}
 			PROPELLANT
 			{
@@ -92478,14 +92940,14 @@ UrlConfig
 			{
 				name = LiquidFuel
 				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
+				ratio = 2
 				DrawGauge = True
 			}
 			PROPELLANT
 			{
 				name = Injector
 				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 2
+				ratio = 1
 			}
 		}
 		MODULE
@@ -92534,7 +92996,7 @@ UrlConfig
 		name = J33A354
 		title = Allison J33-A-354
 		manufacturer = EngineEngineering
-		description = Engine from Lockheed P-80C Shooting Star and its other variants were used on the Martin P4M, Chance-Vought Regulus, Grumman F9F-7, Lockheed T2V and T-33.
+		description = Early 50s engine from Lockheed P-80C Shooting Star and its other variants were used on the Martin P4M, Chance-Vought Regulus, Grumman F9F-7, Lockheed T2V and T-33.
 		mass = 0.825
 		rescaleFactor = 1.0264
 		MODEL
@@ -92797,16 +93259,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -92830,87 +93282,17 @@ UrlConfig
 		MODULE
 		{
 			name = ModuleEnginesFX
-			maxThrust = 20.46
-			machLimit = 0.80
-			machHeatMult = 25
-			engineID = Cruise
-			thrustVectorTransformName = thrustTransform
-			exhaustDamage = True
-			ignitionThreshold = 0.1
-			minThrust = 0
-			heatProduction = 15
-			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
-			engineDecelerationSpeed = 0.5
-			fxOffset = 0, 0, 0.74
-			flameoutEffectName = flameout
-			powerEffectName = running_thrust
-			engageEffectName = engage
-			disengageEffectName = disengage
-			spoolEffectName = running_turbine
-			engineSpoolIdle = 0.05
-			engineSpoolTime = 2.0
-			EngineType = Turbine
-			exhaustDamageMultiplier = 4
-			clampPropReceived = True
-			atmChangeFlow = True
-			useVelCurve = True
-			useAtmCurve = True
-			PROPELLANT
-			{
-				name = IntakeAir
-				ignoreForIsp = True
-				ratio = 22
-			}
-			PROPELLANT
-			{
-				name = LiquidFuel
-				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
-				DrawGauge = True
-			}
-			atmosphereCurve
-			{
-				key = 0 6400 0 0
-			}
-			atmosphereCurve
-			{
-				key = 0 3185.5249745158\t 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -19.48696 -19.48696
-				key = 0.01270236 0.5510023 -18.82588 -23.63205
-				key = 0.04549106 0.306581 -0.007423191 -0.04080971
-				key = 0.3946681 0.5774711 1.779718 1.957797
-				key = 0.6299051 0.8812475 0.07293478 0.04255103
-				key = 0.7379773 0.7420284 -2.933757 -3.108468
-				key = 0.7814471 0.3309285 -17.81278 -14.63003
-				key = 0.7889926 0 -18.8817 -18.31386
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.073 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-			}
-		}
-		MODULE
-		{
-			name = ModuleEnginesFX
 			maxThrust = 24.02
+			minThrust = 0
 			machLimit = 0.80
 			machHeatMult = 25
 			engineID = Injection
-			minThrust = 0
-			maxThrust = 20
 			thrustVectorTransformName = thrustTransform
 			exhaustDamage = True
 			ignitionThreshold = 0.1
 			heatProduction = 15
 			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
+			engineAccelerationSpeed = 0.07
 			engineDecelerationSpeed = 0.5
 			fxOffset = 0, 0, 0.74
 			flameoutEffectName = flameout
@@ -92932,21 +93314,19 @@ UrlConfig
 			}
 			velCurve
 			{
-				key = 0 1.2 -19.48696 -19.48696
-				key = 0.01270236 0.5510023 -18.82588 -23.63205
-				key = 0.04549106 0.306581 -0.007423191 -0.04080971
-				key = 0.3946681 0.5774711 1.779718 1.957797
-				key = 0.6299051 0.8812475 0.07293478 0.04255103
-				key = 0.7379773 0.7420284 -2.933757 -3.108468
-				key = 0.7814471 0.3309285 -17.81278 -14.63003
-				key = 0.7889926 0 -18.8817 -18.31386
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.8 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
 			}
 			atmCurve
 			{
-				key = 0 0 0 1.186726
-				key = 0.073 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
+				key = 0 0 0 1.615373
+				key = 0.1646739 0.3912214 2.576664 2.706189
+				key = 0.25 0.5 0 0
+				key = 0.77 1 0 0
+				key = 1.3 1 0 0
 			}
 			PROPELLANT
 			{
@@ -92958,14 +93338,76 @@ UrlConfig
 			{
 				name = LiquidFuel
 				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
+				ratio = 2
 				DrawGauge = True
 			}
 			PROPELLANT
 			{
 				name = Injector
 				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 2
+				ratio = 1
+			}
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 20.46
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Injection
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 3185.5249745158 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 1.083247
+				key = 0.4 1 0 0
+				key = 0.6 1 0 0
+				key = 0.8 0.1 -7.378566 0
+				key = 2 0 -0.3376396 0
+			}
+			atmCurve
+			{
+				key = 0 0 0 0
+				key = 0.2 0.7 1.452075 1.338876
+				key = 0.5 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 22
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
 			}
 		}
 		MODULE
@@ -93014,77 +93456,12 @@ UrlConfig
 		title = BMW 109-003 / D-20
 		name = D-20BMW003
 		manufacturer = EngineEngineering
-		description = Engine from Mikoyan-Gurevich 9 and in its other variants on the Messerschmitt 262 Schwalbe, Heinkel He-162, Arado Ar-234C, Junkers Ju-287 and Henschel Hs-132. Used in pairs.
+		description = Engine from 40s used on the Messerschmitt 262 Schwalbe, Mikoyan-Gurevich 9 and in its other variants on the Heinkel He-162, Arado Ar-234C, Junkers Ju-287 and Henschel Hs-132. Used in pairs.
 		rescaleFactor = 0.552
 		mass = 0.623
 		MODEL
 		{
 			model = Squad/Parts/Engine/miniJet/SmallJet
-		}
-		MODULE
-		{
-			name = ModuleEnginesFX
-			engineID = Cruise
-			thrustVectorTransformName = thrustTransform
-			exhaustDamage = True
-			ignitionThreshold = 0.1
-			minThrust = 0
-			heatProduction = 15
-			useEngineResponseTime = True
-			engineAccelerationSpeed = 0.12
-			engineDecelerationSpeed = 0.5
-			fxOffset = 0, 0, 0.74
-			flameoutEffectName = flameout
-			powerEffectName = running_thrust
-			engageEffectName = engage
-			disengageEffectName = disengage
-			spoolEffectName = running_turbine
-			engineSpoolIdle = 0.05
-			engineSpoolTime = 2.0
-			EngineType = Turbine
-			exhaustDamageMultiplier = 4
-			clampPropReceived = True
-			atmChangeFlow = True
-			useVelCurve = True
-			useAtmCurve = True
-			machLimit = 0.75
-			machHeatMult = 3.5
-			maxThrust = 7.82
-			PROPELLANT
-			{
-				name = IntakeAir
-				ignoreForIsp = True
-				ratio = 22
-			}
-			PROPELLANT
-			{
-				name = LiquidFuel
-				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
-				ratio = 1
-				DrawGauge = True
-			}
-			atmosphereCurve
-			{
-				key = 0 2548.41997961264 0 0
-			}
-			velCurve
-			{
-				key = 0 1.2 -19.48696 -19.48696
-				key = 0.01870669 0.7250441 -18.82588 -23.63205
-				key = 0.05835421 0.4004531 -0.007423191 -0.04080971
-				key = 0.3955226 0.6347221 1.779718 1.957797
-				key = 0.6050638 0.8698034 0.07293478 0.04255103
-				key = 0.6688855 0.7786648 -2.933757 -3.108468
-				key = 0.717055 0.2736775 -17.81278 -14.63003
-				key = 0.7296054 0 -18.8817 -18.31386
-			}
-			atmCurve
-			{
-				key = 0 0 0 1.186726
-				key = 0.072 0.092 1.339822 1.339822
-				key = 0.337 0.4 0.8976688 0.8976688
-				key = 1 1 0.9127604 0
-			}
 		}
 		MODULE
 		{
@@ -93342,16 +93719,6 @@ UrlConfig
 		}
 		MODULE
 		{
-			name = TweakScale
-			type = stack
-			defaultScale = 0.625
-			TWEAKSCALEEXPONENTS
-			{
-				mass = 2.5
-			}
-		}
-		MODULE
-		{
 			name = GeometryPartModule
 		}
 		MODULE
@@ -93361,6 +93728,68 @@ UrlConfig
 		MODULE
 		{
 			name = FARPartModule
+		}
+		MODULE
+		{
+			name = ModuleEnginesFX
+			maxThrust = 10.76
+			minThrust = 0
+			machLimit = 0.80
+			machHeatMult = 25
+			engineID = Injection
+			minThrust = 0
+			maxThrust = 20
+			thrustVectorTransformName = thrustTransform
+			exhaustDamage = True
+			ignitionThreshold = 0.1
+			heatProduction = 15
+			useEngineResponseTime = True
+			engineAccelerationSpeed = 0.07
+			engineDecelerationSpeed = 0.5
+			fxOffset = 0, 0, 0.74
+			flameoutEffectName = flameout
+			powerEffectName = running_thrust
+			engageEffectName = engage
+			disengageEffectName = disengage
+			spoolEffectName = running_turbine
+			engineSpoolIdle = 0.05
+			engineSpoolTime = 2.0
+			EngineType = Turbine
+			exhaustDamageMultiplier = 4
+			clampPropReceived = True
+			atmChangeFlow = True
+			useVelCurve = True
+			useAtmCurve = True
+			atmosphereCurve
+			{
+				key = 0 2548.41997961264 0 0
+			}
+			velCurve
+			{
+				key = 0 0.8 0 0
+				key = 0.4 1 0 0
+				key = 0.7889926 0 -7.378566 -18.31386
+			}
+			atmCurve
+			{
+				key = 0 0 0 1.615373
+				key = 0.2 0.5 2.576664 2.374091
+				key = 0.5 1 0 0
+				key = 1.3 1 0 0
+			}
+			PROPELLANT
+			{
+				name = IntakeAir
+				ignoreForIsp = True
+				ratio = 20
+			}
+			PROPELLANT
+			{
+				name = LiquidFuel
+				resourceFlowMode = STAGE_STACK_FLOW_BALANCE
+				ratio = 1
+				DrawGauge = True
+			}
 		}
 	}
 }

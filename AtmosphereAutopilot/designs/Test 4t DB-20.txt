@@ -35,7 +35,7 @@ Cruise_Flight_controller
 	desired_latitude_field = -0.0486178_#0.0000
 	desired_longitude_field = -74.72444_#0.0000
 	vertical_control = True
-	desired_altitude_field = 3000_G5
+	desired_altitude_field = 100_G5
 	desired_vertspeed_field = 0_G4
 	preudo_flc = True
 	flc_margin = 20
